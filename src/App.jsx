@@ -9,6 +9,11 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
+  const removeTour = id => {
+    const newTours = tours.filter(t => t.id !== id)
+    setTours(newTours)
+  }
+
   const fetchTours = async () => {
     setIsLoading(true)
     try {
@@ -42,7 +47,7 @@ const App = () => {
 
   return (
     <main>
-        <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour}/>
     </main>
   )
 }
