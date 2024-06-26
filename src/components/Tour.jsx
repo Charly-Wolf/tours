@@ -7,7 +7,10 @@ const Tour = ({ id, image, name, info, price, removeTour }) => {
         <h5>{name}</h5>
         <p>{info}</p>
       </div>
-      <button onClick={() => removeTour(id)} className='btn'>
+      <button
+        onClick={() => removeTour(id)}
+        className='btn btn-block delete-btn'
+      >
         Not interested
       </button>
     </article>
