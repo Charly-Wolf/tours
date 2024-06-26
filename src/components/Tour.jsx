@@ -1,12 +1,12 @@
 const Tour = ({ id, image, name, info, price }) => {
   return (
-    <div>
+    <article className='single-tour'>
       <img src={image} alt={name} />
       <span>${price}</span>
       <h2>{name}</h2>
       <p>{info}</p>
       <button className='btn'>Not interested</button>
-    </div>
+    </article>
   )
 }
 export default Tour
