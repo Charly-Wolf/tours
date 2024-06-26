@@ -10,12 +10,11 @@ const App = () => {
   const [isError, setIsError] = useState(false)
 
   const fetchTours = async () => {
+    setIsLoading(true)
     try {
       const resp = await fetch(url)
       const data = await resp.json()
       setTours(data)
-      console.log(tours)
-
       setIsError(false)
     } catch (error) {
       console.log(error)
@@ -28,8 +27,18 @@ const App = () => {
     fetchTours()
   }, [])
 
-  if (isLoading) return <Loading />
-  if (isError) return <h1>Error</h1>
+  if (isLoading)
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  if (isError)
+    return (
+      <main>
+        <h1>Error</h1>
+      </main>
+    )
 
   return (
     <main>
