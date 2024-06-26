@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Loading from './components/Loading'
+import Tours from './components/Tours'
 
 const url = 'https://www.course-api.com/react-tours-project'
 
@@ -30,6 +31,13 @@ const App = () => {
   if (isLoading) return <Loading />
   if (isError) return <h1>Error</h1>
 
-  return <h2>On Tours</h2>
+  return (
+    <main>
+      <h1>On Tours</h1>
+      <section>
+        <Tours tours={tours} />
+      </section>
+    </main>
+  )
 }
 export default App
