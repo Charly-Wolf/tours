@@ -42,10 +42,7 @@ const App = () => {
 
   return (
     <main>
-      <h1>On Tours</h1>
-      <section>
         <Tours tours={tours} />
-      </section>
     </main>
   )
 }
